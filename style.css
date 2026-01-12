@@ -62,3 +62,22 @@ section ul li {
   margin-bottom: 8px;
 }
 
+
+.download-container {
+  margin-top: 15px;
+}
+
+.btn-download {
+  display: inline-block;
+  background-color: #0066cc;
+  color: #ffffff !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+  background-color: #004a99;
+  text-decoration: none;
+}
