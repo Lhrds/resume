@@ -6,17 +6,23 @@
   <title>Lucas Henrique | Tech Resume</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
+  <!-- Reading Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+
   <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="profile-header">
+      <div class="profile-header reveal">
         <h1>Lucas Henrique</h1>
-        <p style="color: var(--neon-purple); font-weight: bold; letter-spacing: 2px;">DESENVOLVEDOR WEB</p>
+        <p class="glitch-text">DESENVOLVEDOR WEB</p>
       </div>
 
-      <div class="contact-info">
+      <div class="contact-info reveal">
         <div class="contact-item">
           <i class="fas fa-map-marker-alt"></i>
           <span>Betim, MG</span>
@@ -39,7 +45,7 @@
         </div>
       </div>
 
-      <section style="margin-top: 40px;">
+      <section class="reveal" style="margin-top: 40px;">
         <h2 style="font-size: 1rem;">Tech Stack</h2>
         <div class="skills-grid">
           <div class="skill-badge">HTML5</div>
@@ -53,7 +59,7 @@
         </div>
       </section>
 
-      <section style="margin-top: 30px;">
+      <section class="reveal" style="margin-top: 30px;">
         <h2 style="font-size: 1rem;">AI Tools</h2>
         <div class="skills-grid">
           <div class="skill-badge" style="border-color: var(--neon-purple);">Copilot</div>
@@ -63,7 +69,7 @@
         </div>
       </section>
 
-      <section style="margin-top: 30px;">
+      <section class="reveal" style="margin-top: 30px;">
         <h2 style="font-size: 1rem;">Idiomas</h2>
         <div class="contact-item">
           <i class="fas fa-globe"></i>
@@ -75,14 +81,14 @@
         </div>
       </section>
 
-      <a href="curriculo.pdf?v=5" target="_blank" class="btn-download-main">
+      <a href="curriculo.pdf?v=6" target="_blank" class="btn-download-main reveal">
         <i class="fas fa-download"></i> DOWNLOAD PDF
       </a>
     </aside>
 
     <!-- Main Content -->
     <main class="main-content">
-      <section>
+      <section class="reveal">
         <h2><i class="fas fa-user-astronaut" style="margin-right: 15px;"></i> Perfil</h2>
         <p style="font-size: 1.1rem; line-height: 1.8;">
           Especialista em análise de dados com transição sólida para o desenvolvimento web. 
@@ -91,17 +97,17 @@
         </p>
       </section>
 
-      <section>
+      <section class="reveal">
         <h2><i class="fas fa-code-branch" style="margin-right: 15px;"></i> Projetos em Destaque</h2>
         
-        <div class="exp-item">
+        <div class="exp-item project-card">
           <h3>WeatherWise - App de Clima</h3>
           <div class="meta">JavaScript • API Integration • CSS3</div>
           <p>Aplicação moderna para consulta meteorológica em tempo real, com interface responsiva e consumo de APIs externas.</p>
           <a href="https://github.com/Lhrds/WeatherWise---Aplicacao-de-Clima" target="_blank" class="btn-neon" style="margin-top: 10px; font-size: 0.7rem; padding: 5px 15px;">Code</a>
         </div>
 
-        <div class="exp-item">
+        <div class="exp-item project-card">
           <h3>ChatBot Inteligente</h3>
           <div class="meta">Python • NLP • Automation</div>
           <p>Desenvolvimento de um bot interativo para automação de conversas e suporte, focado em lógica de programação e fluxos de dados.</p>
@@ -109,7 +115,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="reveal">
         <h2><i class="fas fa-brain" style="margin-right: 15px;"></i> Soft Skills Técnicas</h2>
         <div class="skills-grid" style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
           <div class="skill-badge" style="border-color: var(--neon-blue);">Code Review</div>
@@ -121,7 +127,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="reveal">
         <h2><i class="fas fa-briefcase" style="margin-right: 15px;"></i> Experiência</h2>
         
         <div class="exp-item">
@@ -137,7 +143,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="reveal">
         <h2><i class="fas fa-award" style="margin-right: 15px;"></i> Certificações</h2>
         
         <div class="cert-card">
@@ -157,5 +163,25 @@
       </section>
     </main>
   </div>
+
+  <script>
+    // Scroll Reveal Animations
+    ScrollReveal().reveal('.reveal', {
+      delay: 200,
+      distance: '50px',
+      duration: 1000,
+      origin: 'bottom',
+      interval: 100
+    });
+
+    // Reading Progress Bar
+    window.onscroll = function() {myFunction()};
+    function myFunction() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";
+    }
+  </script>
 </body>
 </html>
