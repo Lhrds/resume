@@ -245,9 +245,114 @@ h2::after {
 }
 
 @media print {
-  .container { display: block; margin: 0; padding: 0; }
-  .sidebar, .main-content { border: none; box-shadow: none; background: white; color: black; }
-  .btn-neon, .btn-download-main { display: none; }
-  h1, h2, h3 { color: black !important; text-shadow: none !important; }
-  .skill-badge { border: 1px solid #ccc; color: black; }
+  @page {
+    margin: 1.5cm;
+  }
+  
+  body {
+    background: white !important;
+    color: #000 !important;
+    font-family: Arial, sans-serif !important;
+  }
+
+  .container {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    width: 100% !important;
+  }
+
+  .sidebar {
+    background: white !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 20px !important;
+    border-bottom: 2px solid #000 !important;
+    width: 100% !important;
+  }
+
+  .profile-header h1 {
+    color: #000 !important;
+    font-size: 24pt !important;
+    text-align: left !important;
+  }
+
+  .contact-info {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    margin: 10px 0 !important;
+  }
+
+  .contact-item {
+    color: #000 !important;
+    font-size: 10pt !important;
+  }
+
+  .contact-item i, .contact-item a {
+    color: #000 !important;
+  }
+
+  .main-content {
+    background: white !important;
+    padding: 0 !important;
+  }
+
+  h2 {
+    color: #000 !important;
+    font-size: 16pt !important;
+    border-bottom: 2px solid #000 !important;
+    margin-top: 20px !important;
+    padding-bottom: 5px !important;
+  }
+
+  h2::after {
+    display: none !important;
+  }
+
+  .exp-item {
+    border-left: 2px solid #ccc !important;
+    margin-bottom: 20px !important;
+    padding-left: 15px !important;
+  }
+
+  .exp-item h3 {
+    color: #000 !important;
+    font-size: 12pt !important;
+    margin-bottom: 2px !important;
+  }
+
+  .meta {
+    color: #555 !important;
+    font-size: 10pt !important;
+    margin-bottom: 5px !important;
+  }
+
+  .skills-grid {
+    display: block !important;
+  }
+
+  .skill-badge {
+    background: #f0f0f0 !important;
+    border: 1px solid #ccc !important;
+    color: #000 !important;
+    font-size: 10pt !important;
+    padding: 3px 10px !important;
+    margin: 3px !important;
+    display: inline-block !important;
+    border-radius: 4px !important;
+  }
+
+  .cert-card {
+    background: white !important;
+    border: 1px solid #eee !important;
+    padding: 8px 15px !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+  }
+
+  .btn-neon, .btn-download-main {
+    display: none !important;
+  }
 }
