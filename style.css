@@ -49,3 +49,16 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
 }
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section ul li {
+  margin-bottom: 8px;
+}
+
