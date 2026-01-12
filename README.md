@@ -1,1 +1,1 @@
-# resume
+Curriculo profissional frontend
