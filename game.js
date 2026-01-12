@@ -86,11 +86,20 @@ function draw() {
     snake.unshift(newHead);
 }
 
-startBtn.addEventListener('click', () => {
+startBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     initGame();
     if (game) clearInterval(game);
     game = setInterval(draw, 100);
+    startBtn.blur(); // Remove o foco para não interferir no teclado
 });
+
+// Prevenir scroll com as setas
+window.addEventListener("keydown", function(e) {
+    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
 
 initGame();
 draw();
