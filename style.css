@@ -352,7 +352,7 @@ h2::after {
     display: block !important;
   }
 
-  .btn-neon, .btn-download-main {
+  .btn-neon, .btn-download-main, .game-container {
     display: none !important;
   }
 }
