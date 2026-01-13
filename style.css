@@ -215,7 +215,7 @@ h2::after {
 }
 
 .skill-badge:hover i {
-  display: block;
+  display: block !important;
   animation: fadeInScale 0.3s ease-out;
 }
 
