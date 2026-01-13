@@ -81,7 +81,7 @@
         </div>
       </section>
 
-      <a href="curriculo.pdf?v=8" target="_blank" class="btn-download-main reveal">
+      <a href="curriculo.pdf?v=9" target="_blank" class="btn-download-main reveal">
         <i class="fas fa-download"></i> DOWNLOAD PDF
       </a>
     </aside>
@@ -201,32 +201,34 @@
           <p>Gestão de infraestrutura documental e suporte administrativo de alto nível.</p>
         </div>
       </section>
+
+      <!-- Terminal Section -->
+      <section class="terminal-section reveal">
+        <h2><i class="fas fa-terminal" style="margin-right: 15px;"></i> Terminal Interativo</h2>
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="terminal-title">system@lhrds: ~</div>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <div class="terminal-line">Welcome to LHRDS OS v2.0.0...</div>
+            <div class="terminal-line">Type <span class="highlight">'help'</span> to see available commands.</div>
+          </div>
+          <div class="terminal-input-line">
+            <span class="prompt">guest@lhrds:~$</span>
+            <input type="text" id="terminal-input" spellcheck="false" autocomplete="off">
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 
-  <!-- Terminal Section -->
-  <section class="terminal-section reveal">
-    <div class="terminal-window">
-      <div class="terminal-header">
-        <div class="terminal-buttons">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-        </div>
-        <div class="terminal-title">system@lhrds: ~</div>
-      </div>
-      <div class="terminal-body" id="terminal-body">
-        <div class="terminal-line">Welcome to LHRDS OS v2.0.0...</div>
-        <div class="terminal-line">Type <span class="highlight">'help'</span> to see available commands.</div>
-      </div>
-      <div class="terminal-input-line">
-        <span class="prompt">guest@lhrds:~$</span>
-        <input type="text" id="terminal-input" autofocus spellcheck="false">
-      </div>
-    </div>
-  </section>
-
   <script>
+    // Scroll Reveal
     ScrollReveal().reveal('.reveal', {
       delay: 200,
       distance: '50px',
@@ -235,13 +237,13 @@
       interval: 100
     });
 
-    window.onscroll = function() {myFunction()};
-    function myFunction() {
+    // Progress Bar
+    window.onscroll = function() {
       var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       var scrolled = (winScroll / height) * 100;
       document.getElementById("myBar").style.width = scrolled + "%";
-    }
+    };
 
     // Terminal Logic
     const terminalInput = document.getElementById('terminal-input');
@@ -260,6 +262,8 @@
     terminalInput.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
         const input = this.value.toLowerCase().trim();
+        if (!input) return;
+
         const response = commands[input] || `Command not found: ${input}. Type <span class='highlight'>'help'</span> for assistance.`;
         
         if (input === 'clear') {
