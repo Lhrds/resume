@@ -7,8 +7,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 </head>
 <body>
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
   <!-- Reading Progress Bar -->
   <div class="progress-container">
     <div class="progress-bar" id="myBar"></div>
@@ -19,7 +25,9 @@
     <aside class="sidebar">
       <div class="profile-header reveal">
         <h1>Lucas Henrique</h1>
-        <p class="glitch-text">DESENVOLVEDOR WEB</p>
+        <div class="typewriter-container">
+          <span id="typed"></span>
+        </div>
       </div>
 
       <div class="contact-info reveal">
@@ -48,24 +56,24 @@
       <section class="reveal" style="margin-top: 40px;">
         <h2 style="font-size: 1rem;">Tech Stack</h2>
         <div class="skills-grid">
-          <div class="skill-badge">HTML5</div>
-          <div class="skill-badge">CSS3</div>
-          <div class="skill-badge">JS</div>
-          <div class="skill-badge">Python</div>
-          <div class="skill-badge">SQL</div>
-          <div class="skill-badge">Git</div>
-          <div class="skill-badge">Pandas</div>
-          <div class="skill-badge">React</div>
+          <div class="skill-badge tilt-element" data-tilt>HTML5</div>
+          <div class="skill-badge tilt-element" data-tilt>CSS3</div>
+          <div class="skill-badge tilt-element" data-tilt>JS</div>
+          <div class="skill-badge tilt-element" data-tilt>Python</div>
+          <div class="skill-badge tilt-element" data-tilt>SQL</div>
+          <div class="skill-badge tilt-element" data-tilt>Git</div>
+          <div class="skill-badge tilt-element" data-tilt>Pandas</div>
+          <div class="skill-badge tilt-element" data-tilt>React</div>
         </div>
       </section>
 
       <section class="reveal" style="margin-top: 30px;">
         <h2 style="font-size: 1rem;">AI Tools</h2>
         <div class="skills-grid">
-          <div class="skill-badge" style="border-color: var(--neon-purple);">Copilot</div>
-          <div class="skill-badge" style="border-color: var(--neon-purple);">ChatGPT</div>
-          <div class="skill-badge" style="border-color: var(--neon-purple);">Cursor</div>
-          <div class="skill-badge" style="border-color: var(--neon-purple);">Prompts</div>
+          <div class="skill-badge tilt-element" data-tilt style="border-color: var(--neon-purple);">Copilot</div>
+          <div class="skill-badge tilt-element" data-tilt style="border-color: var(--neon-purple);">ChatGPT</div>
+          <div class="skill-badge tilt-element" data-tilt style="border-color: var(--neon-purple);">Cursor</div>
+          <div class="skill-badge tilt-element" data-tilt style="border-color: var(--neon-purple);">Prompts</div>
         </div>
       </section>
 
@@ -81,7 +89,7 @@
         </div>
       </section>
 
-      <a href="curriculo.pdf?v=9" target="_blank" class="btn-download-main reveal">
+      <a href="curriculo.pdf?v=10" target="_blank" class="btn-download-main reveal">
         <i class="fas fa-download"></i> DOWNLOAD PDF
       </a>
     </aside>
@@ -99,17 +107,17 @@
 
       <section class="reveal">
         <h2><i class="fas fa-graduation-cap" style="margin-right: 15px;"></i> Formação Acadêmica</h2>
-        <div class="exp-item">
+        <div class="exp-item tilt-element" data-tilt>
           <h3>Análise e Desenvolvimento de Sistemas</h3>
           <div class="meta">Proz Educação | 01/2023 — 12/2025</div>
           <p>Status: Formado • Tecnólogo focado em desenvolvimento de software e arquitetura de sistemas.</p>
         </div>
-        <div class="exp-item">
+        <div class="exp-item tilt-element" data-tilt>
           <h3>Aprendizagem Industrial em Controle de Qualidade</h3>
           <div class="meta">SENAI CETEM BETIM | 08/2016 — 01/2017</div>
           <p>Status: Formado • Foco em processos industriais e padrões de qualidade.</p>
         </div>
-        <div class="exp-item">
+        <div class="exp-item tilt-element" data-tilt>
           <h3>Aprendizagem Industrial em Desenho Mecânico</h3>
           <div class="meta">SENAI CETEM BETIM | 2014</div>
           <p>Status: Formado • Desenvolvimento de projetos técnicos e leitura de desenhos industriais.</p>
@@ -119,27 +127,27 @@
       <section class="reveal">
         <h2><i class="fas fa-book" style="margin-right: 15px;"></i> Cursos e Especializações</h2>
         <div class="projects-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-          <div class="cert-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
+          <div class="cert-card tilt-element" data-tilt style="flex-direction: column; align-items: flex-start; gap: 5px;">
             <strong style="color: var(--neon-blue);">Algoritmos e Lógica</strong>
             <span style="font-size: 0.8rem; opacity: 0.8;">Udemy • Completo</span>
           </div>
-          <div class="cert-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
+          <div class="cert-card tilt-element" data-tilt style="flex-direction: column; align-items: flex-start; gap: 5px;">
             <strong style="color: var(--neon-blue);">Excel Avançado</strong>
             <span style="font-size: 0.8rem; opacity: 0.8;">ENAP • Completo</span>
           </div>
-          <div class="cert-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
+          <div class="cert-card tilt-element" data-tilt style="flex-direction: column; align-items: flex-start; gap: 5px;">
             <strong style="color: var(--neon-blue);">GitHub Codespaces</strong>
             <span style="font-size: 0.8rem; opacity: 0.8;">ENAP • Completo</span>
           </div>
-          <div class="cert-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
+          <div class="cert-card tilt-element" data-tilt style="flex-direction: column; align-items: flex-start; gap: 5px;">
             <strong style="color: var(--neon-blue);">GitHub Copilot</strong>
             <span style="font-size: 0.8rem; opacity: 0.8;">ENAP • Completo</span>
           </div>
-          <div class="cert-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
+          <div class="cert-card tilt-element" data-tilt style="flex-direction: column; align-items: flex-start; gap: 5px;">
             <strong style="color: var(--neon-blue);">MySQL Database</strong>
             <span style="font-size: 0.8rem; opacity: 0.8;">Prodabel/PBH • Completo</span>
           </div>
-          <div class="cert-card" style="flex-direction: column; align-items: flex-start; gap: 5px;">
+          <div class="cert-card tilt-element" data-tilt style="flex-direction: column; align-items: flex-start; gap: 5px;">
             <strong style="color: var(--neon-blue);">AWS Cloud Practitioner</strong>
             <span style="font-size: 0.8rem; opacity: 0.8;">AWS • Certificado</span>
           </div>
@@ -149,25 +157,25 @@
       <section class="reveal">
         <h2><i class="fas fa-code-branch" style="margin-right: 15px;"></i> Projetos em Destaque</h2>
         <div class="projects-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-          <div class="exp-item project-card">
+          <div class="exp-item project-card tilt-element" data-tilt>
             <h3>WeatherWise</h3>
             <div class="meta">JavaScript • API Integration</div>
             <p>Aplicação moderna para consulta meteorológica em tempo real.</p>
             <a href="https://github.com/Lhrds/WeatherWise---Aplicacao-de-Clima" target="_blank" class="btn-neon" style="font-size: 0.6rem; padding: 4px 10px;">GitHub</a>
           </div>
-          <div class="exp-item project-card">
+          <div class="exp-item project-card tilt-element" data-tilt>
             <h3>ChatBot Inteligente</h3>
             <div class="meta">Python • NLP</div>
             <p>Bot interativo para automação de conversas e suporte.</p>
             <a href="https://github.com/Lhrds/ChatBot" target="_blank" class="btn-neon" style="font-size: 0.6rem; padding: 4px 10px;">GitHub</a>
           </div>
-          <div class="exp-item project-card">
+          <div class="exp-item project-card tilt-element" data-tilt>
             <h3>Sistema de Impostos</h3>
             <div class="meta">PHP • MySQL</div>
             <p>Automação de lançamentos contábeis e gestão tributária.</p>
             <a href="https://github.com/Lhrds/Sistema-de-Impostos" target="_blank" class="btn-neon" style="font-size: 0.6rem; padding: 4px 10px;">GitHub</a>
           </div>
-          <div class="exp-item project-card">
+          <div class="exp-item project-card tilt-element" data-tilt>
             <h3>HTML2PDF Converter</h3>
             <div class="meta">JavaScript • HTML</div>
             <p>Ferramenta para conversão de páginas web em documentos PDF.</p>
@@ -179,49 +187,26 @@
       <section class="reveal">
         <h2><i class="fas fa-brain" style="margin-right: 15px;"></i> Soft Skills Técnicas</h2>
         <div class="skills-grid" style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
-          <div class="skill-badge" style="border-color: var(--neon-blue);">Code Review</div>
-          <div class="skill-badge" style="border-color: var(--neon-blue);">Metodologias Ágeis</div>
-          <div class="skill-badge" style="border-color: var(--neon-blue);">Documentação</div>
-          <div class="skill-badge" style="border-color: var(--neon-blue);">Clean Code</div>
-          <div class="skill-badge" style="border-color: var(--neon-blue);">Resolução de Problemas</div>
-          <div class="skill-badge" style="border-color: var(--neon-blue);">Aprendizado Contínuo</div>
+          <div class="skill-badge tilt-element" data-tilt style="border-color: var(--neon-blue);">Code Review</div>
+          <div class="skill-badge tilt-element" data-tilt style="border-color: var(--neon-blue);">Metodologias Ágeis</div>
+          <div class="skill-badge tilt-element" data-tilt style="border-color: var(--neon-blue);">Documentação</div>
+          <div class="skill-badge tilt-element" data-tilt style="border-color: var(--neon-blue);">Clean Code</div>
+          <div class="skill-badge tilt-element" data-tilt style="border-color: var(--neon-blue);">Resolução de Problemas</div>
+          <div class="skill-badge tilt-element" data-tilt style="border-color: var(--neon-blue);">Aprendizado Contínuo</div>
         </div>
       </section>
 
       <section class="reveal">
         <h2><i class="fas fa-briefcase" style="margin-right: 15px;"></i> Experiência</h2>
-        <div class="exp-item">
+        <div class="exp-item tilt-element" data-tilt>
           <h3>Assistente de Contabilidade</h3>
           <div class="meta">GT Serviços Contábeis | 2019 — Presente</div>
           <p>Análise estratégica de dados financeiros e automação de fluxos de trabalho contábeis.</p>
         </div>
-        <div class="exp-item">
+        <div class="exp-item tilt-element" data-tilt>
           <h3>Auxiliar de Escritório</h3>
           <div class="meta">Klabin S.A | 2015 — 2018</div>
           <p>Gestão de infraestrutura documental e suporte administrativo de alto nível.</p>
-        </div>
-      </section>
-
-      <!-- Terminal Section -->
-      <section class="terminal-section reveal">
-        <h2><i class="fas fa-terminal" style="margin-right: 15px;"></i> Terminal Interativo</h2>
-        <div class="terminal-window">
-          <div class="terminal-header">
-            <div class="terminal-buttons">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-            </div>
-            <div class="terminal-title">system@lhrds: ~</div>
-          </div>
-          <div class="terminal-body" id="terminal-body">
-            <div class="terminal-line">Welcome to LHRDS OS v2.0.0...</div>
-            <div class="terminal-line">Type <span class="highlight">'help'</span> to see available commands.</div>
-          </div>
-          <div class="terminal-input-line">
-            <span class="prompt">guest@lhrds:~$</span>
-            <input type="text" id="terminal-input" spellcheck="false" autocomplete="off">
-          </div>
         </div>
       </section>
     </main>
@@ -245,44 +230,40 @@
       document.getElementById("myBar").style.width = scrolled + "%";
     };
 
-    // Terminal Logic
-    const terminalInput = document.getElementById('terminal-input');
-    const terminalBody = document.getElementById('terminal-body');
+    // Typed.js
+    var typed = new Typed('#typed', {
+      strings: ['DESENVOLVEDOR WEB', 'ESPECIALISTA EM DADOS', 'ENTUSIASTA DE IA', 'FULL STACK DEVELOPER'],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 2000,
+      loop: true
+    });
 
-    const commands = {
-      help: "Available commands: <span class='highlight'>about</span>, <span class='highlight'>skills</span>, <span class='highlight'>projects</span>, <span class='highlight'>contact</span>, <span class='highlight'>clear</span>",
-      about: "Lucas Henrique: Full Stack Developer transitioning from Accounting. Expert in Data Analysis and AI-driven solutions.",
-      skills: "Core Tech: React, Python, SQL, Node.js, PHP. AI Tools: Copilot, ChatGPT, Cursor.",
-      projects: "Recent work: WeatherWise, ChatBot, Tax System, HTML2PDF Converter. Type 'github' to visit.",
-      contact: "Email: lucasrezende2013@hotmail.com | LinkedIn: lucasrezende-dev",
-      github: "Redirecting to GitHub... <a href='https://github.com/Lhrds' target='_blank' class='highlight'>Click here</a> if it doesn't open.",
-      clear: "CLEAR"
-    };
+    // Particles.js
+    particlesJS('particles-js', {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#00f2ff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.2, "random": false },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#00f2ff", "opacity": 0.1, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+      },
+      "retina_detect": true
+    });
 
-    terminalInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') {
-        const input = this.value.toLowerCase().trim();
-        if (!input) return;
-
-        const response = commands[input] || `Command not found: ${input}. Type <span class='highlight'>'help'</span> for assistance.`;
-        
-        if (input === 'clear') {
-          terminalBody.innerHTML = "<div class='terminal-line'>Terminal cleared. Type <span class='highlight'>'help'</span> for commands.</div>";
-        } else {
-          const userLine = document.createElement('div');
-          userLine.className = 'terminal-line';
-          userLine.innerHTML = `<span class="prompt">guest@lhrds:~$</span> ${this.value}`;
-          terminalBody.appendChild(userLine);
-
-          const responseLine = document.createElement('div');
-          responseLine.className = 'terminal-line';
-          responseLine.innerHTML = response;
-          terminalBody.appendChild(responseLine);
-        }
-
-        this.value = '';
-        terminalBody.scrollTop = terminalBody.scrollHeight;
-      }
+    // Vanilla Tilt
+    VanillaTilt.init(document.querySelectorAll(".tilt-element"), {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.2,
     });
   </script>
 </body>

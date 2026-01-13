@@ -4,7 +4,7 @@
   --neon-blue: #00f2ff;
   --neon-purple: #bc13fe;
   --dark-bg: #050505;
-  --card-bg: #111;
+  --card-bg: rgba(17, 17, 17, 0.8);
   --text-main: #e0e0e0;
   --text-dim: #888;
 }
@@ -20,9 +20,16 @@ body {
   color: var(--text-main);
   font-family: 'Rajdhani', sans-serif;
   overflow-x: hidden;
-  background-image: 
-    linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)),
-    url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+  position: relative;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .container {
@@ -32,12 +39,8 @@ body {
   grid-template-columns: 350px 1fr;
   gap: 30px;
   padding: 20px;
-  animation: fadeIn 1.5s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  position: relative;
+  z-index: 1;
 }
 
 /* Sidebar Style */
@@ -45,7 +48,8 @@ body {
   background: var(--card-bg);
   padding: 40px;
   border-radius: 20px;
-  border: 1px solid #333;
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  backdrop-filter: blur(10px);
   box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
   height: fit-content;
 }
@@ -62,6 +66,16 @@ body {
   text-transform: uppercase;
   margin-bottom: 10px;
   text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.typewriter-container {
+  height: 24px;
+  margin-top: 10px;
+  color: var(--neon-purple);
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .contact-info {
@@ -98,7 +112,8 @@ body {
   background: var(--card-bg);
   padding: 50px;
   border-radius: 20px;
-  border: 1px solid #333;
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 section {
@@ -128,13 +143,17 @@ h2::after {
   border-left: 2px solid #333;
   padding-left: 25px;
   position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: 0 15px 15px 0;
+  transition: 0.3s;
 }
 
 .exp-item::before {
   content: '';
   position: absolute;
   left: -6px;
-  top: 0;
+  top: 20px;
   width: 10px;
   height: 10px;
   background: var(--neon-blue);
@@ -169,12 +188,14 @@ h2::after {
   border: 1px solid #333;
   transition: 0.3s;
   cursor: default;
+  transform-style: preserve-3d;
 }
 
 .skill-badge:hover {
   border-color: var(--neon-blue);
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 242, 255, 0.2);
+  background: var(--neon-blue);
+  color: #000;
+  box-shadow: 0 0 15px var(--neon-blue);
 }
 
 .cert-card {
@@ -187,6 +208,7 @@ h2::after {
   align-items: center;
   border: 1px solid #333;
   transition: 0.3s;
+  transform-style: preserve-3d;
 }
 
 .cert-card:hover {
@@ -235,128 +257,6 @@ h2::after {
   transform: scale(1.02);
 }
 
-@media (max-width: 900px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-  .sidebar {
-    position: static;
-  }
-}
-
-@media print {
-  @page {
-    margin: 1.5cm;
-  }
-  
-  body {
-    background: white !important;
-    color: #000 !important;
-    font-family: Arial, sans-serif !important;
-  }
-
-  .container {
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: white !important;
-    width: 100% !important;
-  }
-
-  .sidebar {
-    background: white !important;
-    border: none !important;
-    padding: 0 !important;
-    margin-bottom: 20px !important;
-    border-bottom: 2px solid #000 !important;
-    width: 100% !important;
-  }
-
-  .profile-header h1 {
-    color: #000 !important;
-    font-size: 24pt !important;
-    text-align: left !important;
-  }
-
-  .contact-info {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 20px !important;
-    margin: 10px 0 !important;
-  }
-
-  .contact-item {
-    color: #000 !important;
-    font-size: 10pt !important;
-  }
-
-  .contact-item i, .contact-item a {
-    color: #000 !important;
-  }
-
-  .main-content {
-    background: white !important;
-    padding: 0 !important;
-  }
-
-  h2 {
-    color: #000 !important;
-    font-size: 16pt !important;
-    border-bottom: 2px solid #000 !important;
-    margin-top: 20px !important;
-    padding-bottom: 5px !important;
-  }
-
-  h2::after {
-    display: none !important;
-  }
-
-  .exp-item {
-    border-left: 2px solid #ccc !important;
-    margin-bottom: 20px !important;
-    padding-left: 15px !important;
-  }
-
-  .exp-item h3 {
-    color: #000 !important;
-    font-size: 12pt !important;
-    margin-bottom: 2px !important;
-  }
-
-  .meta {
-    color: #555 !important;
-    font-size: 10pt !important;
-    margin-bottom: 5px !important;
-  }
-
-  .skills-grid {
-    display: block !important;
-  }
-
-  .skill-badge {
-    background: #f0f0f0 !important;
-    border: 1px solid #ccc !important;
-    color: #000 !important;
-    font-size: 10pt !important;
-    padding: 3px 10px !important;
-    margin: 3px !important;
-    display: inline-block !important;
-    border-radius: 4px !important;
-  }
-
-  .cert-card {
-    background: white !important;
-    border: 1px solid #eee !important;
-    padding: 8px 15px !important;
-    margin-bottom: 8px !important;
-    display: block !important;
-  }
-
-  .btn-neon, .btn-download-main, .game-container {
-    display: none !important;
-  }
-}
-
 /* Reading Progress Bar */
 .progress-container {
   position: fixed;
@@ -374,145 +274,70 @@ h2::after {
   box-shadow: 0 0 10px var(--neon-blue);
 }
 
-/* Project Card Hover Effect */
-.project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+/* Tilt Effect */
+.tilt-element {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
 }
 
-.project-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 242, 255, 0.1);
-  border-left: 4px solid var(--neon-blue);
-}
-
-/* Glitch Effect for Header */
-.glitch-text {
-  position: relative;
-  display: inline-block;
-}
-
-.glitch-text:hover {
-  animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
-  color: var(--neon-blue);
-}
-
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
-}
-
-/* Skill Badge Hover */
-.skill-badge:hover {
-  background: var(--neon-blue);
-  color: #000;
-  transform: scale(1.1);
-  box-shadow: 0 0 15px var(--neon-blue);
-}
-
-/* Hide interactive elements in PDF */
-@media print {
-  .progress-container, .scroll-reveal {
-    display: none !important;
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
   }
-  .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
+  .sidebar {
+    position: static;
   }
 }
 
-/* Terminal Styles */
-.terminal-section {
-  margin-top: 50px;
-  padding-bottom: 50px;
-}
-
-.terminal-window {
-  background: rgba(10, 10, 15, 0.9);
-  border: 1px solid var(--neon-blue);
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
-  overflow: hidden;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.terminal-header {
-  background: #1a1a2e;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid rgba(0, 242, 255, 0.3);
-}
-
-.terminal-buttons {
-  display: flex;
-  gap: 8px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
-
-.terminal-title {
-  margin-left: 20px;
-  color: #888;
-  font-size: 0.8rem;
-}
-
-.terminal-body {
-  padding: 20px;
-  height: 250px;
-  overflow-y: auto;
-  color: #fff;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.terminal-line {
-  margin-bottom: 5px;
-}
-
-.highlight {
-  color: var(--neon-blue);
-  font-weight: bold;
-}
-
-.terminal-input-line {
-  padding: 0 20px 20px;
-  display: flex;
-  align-items: center;
-}
-
-.prompt {
-  color: var(--neon-purple);
-  margin-right: 10px;
-  white-space: nowrap;
-}
-
-#terminal-input {
-  background: transparent;
-  border: none;
-  color: var(--neon-blue);
-  font-family: inherit;
-  font-size: inherit;
-  width: 100%;
-  outline: none;
-}
-
-/* Hide terminal in PDF */
 @media print {
-  .terminal-section {
+  #particles-js, .progress-container, .typewriter-container, .btn-neon, .btn-download-main {
     display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: #000 !important;
+    font-family: Arial, sans-serif !important;
+  }
+
+  .container {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    width: 100% !important;
+  }
+
+  .sidebar, .main-content {
+    background: white !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+    backdrop-filter: none !important;
+  }
+
+  .profile-header h1 {
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+
+  h2 {
+    color: #000 !important;
+    border-bottom: 2px solid #000 !important;
+  }
+
+  h2::after {
+    display: none !important;
+  }
+
+  .exp-item {
+    background: white !important;
+    border-left: 2px solid #000 !important;
+  }
+
+  .skill-badge {
+    background: #eee !important;
+    color: #000 !important;
+    border: 1px solid #ccc !important;
   }
 }
