@@ -204,6 +204,28 @@
     </main>
   </div>
 
+  <!-- Terminal Section -->
+  <section class="terminal-section reveal">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-buttons">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="terminal-title">system@lhrds: ~</div>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-line">Welcome to LHRDS OS v2.0.0...</div>
+        <div class="terminal-line">Type <span class="highlight">'help'</span> to see available commands.</div>
+      </div>
+      <div class="terminal-input-line">
+        <span class="prompt">guest@lhrds:~$</span>
+        <input type="text" id="terminal-input" autofocus spellcheck="false">
+      </div>
+    </div>
+  </section>
+
   <script>
     ScrollReveal().reveal('.reveal', {
       delay: 200,
@@ -220,6 +242,44 @@
       var scrolled = (winScroll / height) * 100;
       document.getElementById("myBar").style.width = scrolled + "%";
     }
+
+    // Terminal Logic
+    const terminalInput = document.getElementById('terminal-input');
+    const terminalBody = document.getElementById('terminal-body');
+
+    const commands = {
+      help: "Available commands: <span class='highlight'>about</span>, <span class='highlight'>skills</span>, <span class='highlight'>projects</span>, <span class='highlight'>contact</span>, <span class='highlight'>clear</span>",
+      about: "Lucas Henrique: Full Stack Developer transitioning from Accounting. Expert in Data Analysis and AI-driven solutions.",
+      skills: "Core Tech: React, Python, SQL, Node.js, PHP. AI Tools: Copilot, ChatGPT, Cursor.",
+      projects: "Recent work: WeatherWise, ChatBot, Tax System, HTML2PDF Converter. Type 'github' to visit.",
+      contact: "Email: lucasrezende2013@hotmail.com | LinkedIn: lucasrezende-dev",
+      github: "Redirecting to GitHub... <a href='https://github.com/Lhrds' target='_blank' class='highlight'>Click here</a> if it doesn't open.",
+      clear: "CLEAR"
+    };
+
+    terminalInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        const input = this.value.toLowerCase().trim();
+        const response = commands[input] || `Command not found: ${input}. Type <span class='highlight'>'help'</span> for assistance.`;
+        
+        if (input === 'clear') {
+          terminalBody.innerHTML = "<div class='terminal-line'>Terminal cleared. Type <span class='highlight'>'help'</span> for commands.</div>";
+        } else {
+          const userLine = document.createElement('div');
+          userLine.className = 'terminal-line';
+          userLine.innerHTML = `<span class="prompt">guest@lhrds:~$</span> ${this.value}`;
+          terminalBody.appendChild(userLine);
+
+          const responseLine = document.createElement('div');
+          responseLine.className = 'terminal-line';
+          responseLine.innerHTML = response;
+          terminalBody.appendChild(responseLine);
+        }
+
+        this.value = '';
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      }
+    });
   </script>
 </body>
 </html>

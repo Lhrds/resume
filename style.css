@@ -425,3 +425,94 @@ h2::after {
     visibility: visible !important;
   }
 }
+
+/* Terminal Styles */
+.terminal-section {
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.terminal-window {
+  background: rgba(10, 10, 15, 0.9);
+  border: 1px solid var(--neon-blue);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+  overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal-header {
+  background: #1a1a2e;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 242, 255, 0.3);
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-title {
+  margin-left: 20px;
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.terminal-body {
+  padding: 20px;
+  height: 250px;
+  overflow-y: auto;
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.terminal-line {
+  margin-bottom: 5px;
+}
+
+.highlight {
+  color: var(--neon-blue);
+  font-weight: bold;
+}
+
+.terminal-input-line {
+  padding: 0 20px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  color: var(--neon-purple);
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+#terminal-input {
+  background: transparent;
+  border: none;
+  color: var(--neon-blue);
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  outline: none;
+}
+
+/* Hide terminal in PDF */
+@media print {
+  .terminal-section {
+    display: none !important;
+  }
+}
